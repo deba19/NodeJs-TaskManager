@@ -1,0 +1,25 @@
+{
+  "name": "NodeJs-TaskManager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deba19/NodeJs-TaskManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deba19/NodeJs-TaskManager/issues"
+  },
+  "homepage": "https://github.com/deba19/NodeJs-TaskManager#readme",
+  "dependencies": {
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.18",
+    "validator": "^13.1.1"
+  }
+}
