@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/deba19/NodeJs-TaskManager#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.18",
     "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
