@@ -54,10 +54,16 @@ const userSchema=new mongoose.Schema({
             required:true,
         }
     }],
+    avatar:{
+        type:Buffer,
+    }
+},
+{
+    timestamps:true,
 })
 userSchema.virtual('task',{
     ref:'Task',
-    localField:'',
+    localField:'_id',
     foreignField:'owner' 
 })
 //Function to show what actually should be displayed
@@ -66,14 +72,17 @@ userSchema.methods.toJSON=function(){
     const userObject=user.toObject()
     delete userObject.password
     delete userObject.tokens
+    delete userObject.avatar
     return userObject
 }
 //Json web token
-userSchema.methods.generateAuthToken= async function(){
-    const user=this
-    const token=jwt.sign({_id:user._id.toString()},'Thisismynewcourse')
-    user.tokens=user.tokens.concat({token})
+userSchema.methods.generateAuthToken = async function () {
+    const user = this
+    const token = jwt.sign({ _id: user._id.toString() }, 'thisismynewcourse')
+
+    user.tokens = user.tokens.concat({ token })
     await user.save()
+
     return token
 }
 //login
